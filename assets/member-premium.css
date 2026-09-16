@@ -1,0 +1,135 @@
+:root {
+  --navy: #071e3d;
+  --blue: #0e5aa7;
+  --sky: #55c2ff;
+  --yellow: #ffc928;
+  --ink: #071e3d;
+  --muted: #5e7188;
+  --white: #f7fbff;
+}
+
+html, body { min-height: 100%; }
+body {
+  background: #071e3d !important;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif !important;
+}
+.section-painter {
+  position: fixed;
+  z-index: 12;
+  left: 18px;
+  bottom: 0;
+  width: 320px;
+  height: 460px;
+  object-fit: contain;
+  object-position: bottom left;
+  filter: drop-shadow(0 12px 12px rgba(0,0,0,.24));
+  pointer-events: none;
+  animation: welcome-in-out 7s .35s ease both;
+}
+.section-painter-hidden {
+  animation: painter-out .35s ease forwards;
+}
+body::after {
+  content: none;
+  position: fixed;
+  z-index: 12;
+  left: 18px;
+  bottom: 0;
+  width: 320px;
+  height: 460px;
+  background: none;
+  filter: drop-shadow(0 12px 12px rgba(0,0,0,.24));
+  pointer-events: none;
+  animation: welcome-in-out 7s .35s ease both;
+}
+body > div.flex {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 80% 8%, rgba(85,194,255,.24), transparent 28%),
+    radial-gradient(circle at 8% 70%, rgba(14,90,167,.35), transparent 30%),
+    linear-gradient(135deg, #071e3d 0%, #0b3d70 48%, #0e5aa7 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+body > div.flex::before,
+body > div.flex::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,.12);
+  transform: rotate(-19deg);
+}
+body > div.flex::before { width: 42vw; height: 9px; top: 25%; right: -8%; border-radius: 99px; background: rgba(85,194,255,.15); }
+body > div.flex::after { width: 28vw; height: 7px; bottom: 19%; left: -8%; border-radius: 99px; background: rgba(255,201,40,.13); }
+header.bg-surface-strong {
+  position: sticky !important;
+  top: 0;
+  z-index: 20;
+  background: rgba(7,30,61,.82) !important;
+  border-bottom: 1px solid rgba(255,255,255,.13);
+  box-shadow: 0 10px 32px rgba(2,15,35,.2);
+  backdrop-filter: blur(16px);
+}
+header > div { max-width: 1180px !important; padding-top: 17px !important; padding-bottom: 17px !important; }
+header > div > span:first-child {
+  width: 44px !important;
+  height: 44px !important;
+  background-color: #fff !important;
+  background-image: url("/logo.png");
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 0 4px rgba(255,201,40,.16);
+}
+header > div > span:first-child svg { display: none; }
+header a { color: #fff !important; font-family: "Space Grotesk", sans-serif !important; font-size: 1.05rem !important; }
+main { position: relative; z-index: 1; max-width: 1180px !important; padding-top: clamp(60px, 9vw, 112px) !important; padding-bottom: 100px !important; animation: rise .7s ease both; }
+main h1 { color: #fff !important; max-width: 760px; font-size: clamp(2.3rem, 5vw, 4.7rem) !important; line-height: .98 !important; letter-spacing: -.04em !important; }
+main h1::before { content: "ÁREA EXCLUSIVA DO ALUNO"; display: block; color: var(--yellow); font: 700 .73rem/1 "DM Sans", sans-serif; letter-spacing: .17em; margin-bottom: 22px; }
+main > p { color: rgba(247,251,255,.78) !important; max-width: 650px !important; line-height: 1.7; }
+main > p strong { color: #fff !important; }
+main > p::after { content: "51 Aulas   •   Material completo   •   10 Bônus"; display: block; margin-top: 24px; color: var(--yellow); font: 700 .76rem/1.4 "Space Grotesk", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+main > div { margin-top: 48px !important; gap: 20px !important; }
+main > div > a {
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.19) !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.06)) !important;
+  box-shadow: 0 18px 45px rgba(2,15,35,.2) !important;
+  color: #fff !important;
+  backdrop-filter: blur(12px);
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease !important;
+  animation: rise .65s ease both;
+}
+main > div > a:nth-child(2) { animation-delay: .1s; }
+main > div > a:nth-child(3) { animation-delay: .2s; }
+main > div > a::after { content: ""; position: absolute; width: 110px; height: 5px; right: -20px; top: 30px; background: var(--yellow); border-radius: 99px; transform: rotate(-42deg); opacity: .85; }
+main > div > a:hover { transform: translateY(-8px) !important; border-color: rgba(85,194,255,.75) !important; box-shadow: 0 24px 55px rgba(0,0,0,.28), 0 0 24px rgba(85,194,255,.15) !important; }
+main > div > a > span:first-child { background: var(--yellow) !important; color: var(--navy) !important; border-radius: 14px !important; box-shadow: 0 8px 18px rgba(255,201,40,.22); }
+main > div > a h2 { color: #fff !important; font-family: "Space Grotesk", sans-serif !important; font-size: 1.08rem !important; }
+main > div > a p { color: rgba(247,251,255,.7) !important; }
+main > div > a > span:last-child { color: var(--yellow) !important; margin-top: auto !important; font-weight: 700; }
+footer { position: relative; z-index: 1; background: rgba(3,17,38,.52) !important; color: rgba(255,255,255,.65) !important; border-top: 1px solid rgba(255,255,255,.12); }
+#lovable-badge { display: none !important; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes welcome-in-out {
+  0% { opacity: 0; transform: translate(-18px, 18px); }
+  6% { opacity: 1; transform: translate(0, 0); }
+  90% { opacity: 1; transform: translate(0, 0); }
+  100% { opacity: 0; transform: translate(-8px, 12px); }
+}
+@keyframes painter-out { to { opacity: 0; transform: translate(-8px, 12px); } }
+@media (max-width: 640px) {
+  header > div { padding-left: 18px !important; padding-right: 18px !important; }
+  main { padding: 56px 18px 80px !important; }
+  main h1 { font-size: 2.65rem !important; }
+  main > div > a { min-height: 210px; }
+  .section-painter { width: 220px; height: 316px; left: 0; }
+  body > div.flex::before { width: 75vw; top: 33%; }
+}
